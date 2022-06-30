@@ -1,0 +1,21 @@
+{
+  "name": "grpc-node-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:server": "node server.js",
+    "query:list": "node actions/list.js",
+    "query:find": "node actions/find.js",
+    "query:insert": "node actions/insert.js",
+    "query:delete": "node actions/delete.js",
+    "compile": "protoc --js_out=import_style=commonjs,binary:. proto/notes.proto"
+  },
+  "author": "quanbh",
+  "license": "ISC",
+  "dependencies": {
+    "grpc": "^1.24.11",
+    "uuidv1": "^1.6.14"
+  }
+}

@@ -1,0 +1,27 @@
+//pets.proto
+
+syntax = "proto3";
+
+message Pet {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+
+}
+message PetId {
+  string id = 1;
+}
+
+message Void {}
+
+message PetList {
+  repeated Pet pets = 1;
+}
+
+
+service PetService {
+  rpc List(Void) returns (PetList);
+  rpc FindOne(PetId) returns (Pet);
+  rpc Insert (Pet) returns (Pet);
+  rpc Delete (PetId) returns (Pet);
+}
